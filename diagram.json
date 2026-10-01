@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Truong Kieu Phong",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard", "id": "bb1", "top": -358.2, "left": -26, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -134.4, "left": 312.04, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -442.6,
+      "left": 165,
+      "rotate": 270,
+      "attrs": { "hornColor": "red" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": -442.6,
+      "left": 241.8,
+      "rotate": 270,
+      "attrs": { "hornColor": "blue" }
+    }
+  ],
+  "connections": [
+    [ "esp:5V", "bb1:bp.35", "red", [ "v0", "h-20" ] ],
+    [ "esp:GND.2", "bb1:bn.35", "black", [ "v0", "h-30" ] ],
+    [ "bb1:bn.26", "bb1:26t.a", "black", [ "v0" ] ],
+    [ "bb1:bp.27", "bb1:27t.a", "red", [ "v0" ] ],
+    [ "esp:13", "bb1:28t.a", "green", [ "h0" ] ],
+    [ "bb1:bn.34", "bb1:34t.a", "black", [ "v0" ] ],
+    [ "bb1:bp.35", "bb1:35t.a", "red", [ "v0" ] ],
+    [ "esp:14", "bb1:36t.a", "blue", [ "h0" ] ],
+    [ "servo1:GND", "bb1:26t.b", "", [ "$bb" ] ],
+    [ "servo1:V+", "bb1:27t.b", "", [ "$bb" ] ],
+    [ "servo1:PWM", "bb1:28t.b", "", [ "$bb" ] ],
+    [ "servo2:GND", "bb1:34t.b", "", [ "$bb" ] ],
+    [ "servo2:V+", "bb1:35t.b", "", [ "$bb" ] ],
+    [ "servo2:PWM", "bb1:36t.b", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
